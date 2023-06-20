@@ -1195,12 +1195,12 @@ require('./include/front_header.php');
     </section>
 
 
-    <div id="loader">
+    <!-- <div id="loader">
         <div class="spinner">
             <div class="dot1"></div>
             <div class="dot2"></div>
         </div>
-    </div>
+    </div> -->
 
 <?php
 require('./include/footer.php');

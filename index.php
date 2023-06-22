@@ -89,7 +89,7 @@ require('./include/front_header.php');
                 <!--/ Carousel item end -->
                 
                 <div class="item">
-                    <img class="img-responsive" src="images/header-back.png" alt="slider">
+                    <img class="img-responsive" src="./assets/frontend/images/header-back.png" alt="slider">
                     
                     <div class="slider-content">
                         <div class="col-md-12 text-center">
@@ -104,7 +104,7 @@ require('./include/front_header.php');
                 <!--/ Carousel item end -->
                 
                 <div class="item">
-                    <img class="img-responsive" src="images//galaxy.jpg" alt="slider">
+                    <img class="img-responsive" src="./assets/frontend/images/galaxy.jpg" alt="slider">
                     <div class="slider-content">
                         <div class="col-md-12 text-center">
                             <h1 class="animated2">
@@ -1202,6 +1202,6 @@ require('./include/front_header.php');
         </div>
     </div> -->
 
-<?php
-require('./include/footer.php');
+<?php 
+require('./include/front_footer.php');
 ?>

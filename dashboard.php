@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(!isset($_SESSION['login'])){
+    header("Location: ./login.php");
+}
 require('./include/header.php');
 ?>
 
@@ -368,6 +372,12 @@ require('./include/header.php');
                         <div data-i18n="Documentation">Documentation</div>
                     </a>
                 </li>
+                <li class="menu-item">
+                    <a href="logout.php" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-file"></i>
+                        <div data-i18n="Documentation">Logout</div>
+                    </a>
+                </li>
             </ul>
         </aside>
         <!-- / Menu -->
@@ -475,7 +485,14 @@ require('./include/header.php');
                                 <div class="d-flex align-items-end row">
                                     <div class="col-sm-7">
                                         <div class="card-body">
-                                            <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                                            <!-- <h5 class="card-title text-primary">
+                                                <?php
+                                                echo $_SESSION['login'];
+                                                ?>
+                                            </h5> -->
+                                            <h5 class="card-title text-primary">Congratulations 
+                                                <?=$_SESSION['username']?>
+                                            🎉</h5>
                                             <p class="mb-4">
                                                 You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
                                                 your profile.

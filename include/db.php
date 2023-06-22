@@ -2,10 +2,13 @@
 $server_name = "localhost";
 $user_name = "root";
 $password = "";
-$db_name = "mr_rasmus";
+$database_name = "mr_rasmus";
 
-$connection = mysqli_connect($server_name, $user_name, $password, $db_name);
-// if($connection){
-//     echo "Database Connection has been Sussessfully";
-// }
+$check = mysqli_connect($server_name, $user_name,$password,$database_name);
+if($check){
+    echo "Your Database has been successfully connect";
+}else{
+    echo "Somthing Wrong";
+}
 ?>
+

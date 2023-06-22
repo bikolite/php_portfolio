@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('./include/header.php');
 ?>
 <div class="container-xxl">
@@ -53,8 +54,26 @@ require('./include/header.php');
 
                     <form id="formAuthentication" class="mb-3" action="./formpost/login_post.php" method="POST">
                         <div class="mb-3">
-                            <label for="email" class="form-label">Username</label>
+                            <label for="email" class="form-label">Username</label> <br>
                             <input type="text" class="form-control" id="email" name="username" placeholder="Enter your username" autofocus />
+
+                            <?php
+                            if(isset($_SESSION['error'])){
+
+                            ?>
+                                <label for="email" class="form-label" style="color: red;">
+                                    <?=$_SESSION['error']?>
+                                </label>
+                            <?php
+                            }
+
+                            session_destroy();
+                            ?>
+
+
+
+
+                            
                         </div>
                         <div class="mb-3 form-password-toggle">
                             <div class="d-flex justify-content-between">
@@ -81,7 +100,7 @@ require('./include/header.php');
 
                     <p class="text-center">
                         <span>New on our platform?</span>
-                        <a href="auth-register-basic.html">
+                        <a href="./registration.php">
                             <span>Create an account</span>
                         </a>
                     </p>

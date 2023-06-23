@@ -1,4 +1,5 @@
 <?php 
+require('./include/db.php');
 require('./include/front_header.php');
 ?>
   
@@ -460,91 +461,32 @@ require('./include/front_header.php');
                     </div>
                 </div>
                 <div class="row">
+                    <?php
+                        $sql = "SELECT * FROM `services` ORDER BY id  DESC LIMIT 1;";
+                        $result = mysqli_query($check, $sql);
+                    ?>
+
+                    <?php
+                    foreach($result as $service){
+                    ?>
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="feature-2">
                             <div class="media">
                                 <div class="pull-left">
-                                    <i class="fa fa-magic"></i>
+                                    <i class="<?=$service['set_icon']?>"></i>
                                     <div class="border"></div>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">Web Design</h4>
-                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
+                                    <h4 class="media-heading"><?=$service['service_heading']?></h4>
+                                    <p><?=$service['description']?></p>
                                 </div>
                             </div>
                         </div>
-                    </div><!-- /.col-md-4 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="feature-2">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <i class="fa fa-css3"></i>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">HTML5 & CSS3</h4>
-                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-4 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="feature-2">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <i class="fa fa-wordpress"></i>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Wordpress Theme</h4>
-                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-4 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="feature-2">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <i class="fa fa-plug"></i>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Wordpress Plugin</h4>
-                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-4 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="feature-2">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <i class="fa fa-joomla"></i>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Joomla Template</h4>
-                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-4 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="feature-2">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <i class="fa fa-cube"></i>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Joomla Extension</h4>
-                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-4 -->
+                    </div> 
                     
+                    <?php
+                      }
+                    ?>
                 </div><!-- /.row -->
             
             </div><!-- /.container -->
@@ -1166,7 +1108,9 @@ require('./include/front_header.php');
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 col-xs-12">
-                        <span class="copyright">Copyright &copy; <a href="#">SojibAhmed</a> 2023</span>
+                        <span class="copyright">Copyright &copy; <a href="#">SojibAhmed</a> 
+                    <?=date('d/m/Y')?>
+                    </span>
                     </div>
                     <div class="col-md-4 col-xs-12">
                         <div class="footer-social text-center">
